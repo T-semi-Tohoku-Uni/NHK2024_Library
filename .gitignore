@@ -54,3 +54,4 @@ dkms.conf
 # Output File
 *.txt
 *.csv
+*.DS_Store
