@@ -10,7 +10,7 @@
 サンプルコード : `example/filter/moving_average_filter.c`
 
 ### クリップ関数
-内容 : 最小値と最大値の間に丸める（センサに使えるかも）
+内容 : 最小値と最大値の間に丸める（センサに使えるかも）\
 格納場所 : `stc/clip_number.c` \
 サンプルコード : `example/clip_number/clip_number.c`
 
