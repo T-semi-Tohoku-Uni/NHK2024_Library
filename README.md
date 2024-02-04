@@ -9,6 +9,11 @@
 格納場所 : `src/filter.c` \
 サンプルコード : `example/filter/moving_average_filter.c`
 
+### クリップ関数
+内容 : 最小値と最大値の間に丸める（センサに使えるかも）
+格納場所 : `stc/clip_number.c` \
+サンプルコード : `example/clip_number/clip_number.c`
+
 ## 注意
 STM32CubeIDEでこのリポジトリを使う場合は以下の点に注意してください.
 
