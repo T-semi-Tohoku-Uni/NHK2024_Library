@@ -1,4 +1,4 @@
-#ifdef __CLIP_NUMBER_H__
+#ifndef __CLIP_NUMBER_H__
 #define __CLIP_NUMBER_H__
 
 #include <stdlib.h>
