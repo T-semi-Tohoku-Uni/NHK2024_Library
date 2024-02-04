@@ -55,3 +55,5 @@ dkms.conf
 *.txt
 *.csv
 *.DS_Store
+
+.vscode/
