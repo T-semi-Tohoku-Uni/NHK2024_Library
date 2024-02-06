@@ -1,12 +1,6 @@
 #include "pid.h"
 #include <stdio.h>
 
-int main() {
-    PID pid;
-    pid_init(&pid, 0.01, 1.0, 0.1, 0.1, 0.0);
-    printf("pid_compute(10.0) = %f\n", pid_compute(&pid, 10.0));
-}
-
 void pid_init(
     PID *pid,
     double control_cycle,
