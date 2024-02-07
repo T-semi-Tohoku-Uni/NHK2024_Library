@@ -25,7 +25,7 @@ int main() {
         サンプリング周期が0.01, カットオフ周期が0.0001としている
         もうちょいゲインを小さくしたい所存
     */
-    NHK2024_Low_Pass_Filter_Settings* settings = low_pass_filter_init(0.01, 1e-04);
+    NHK2024_Low_Pass_Filter_Settings* settings = low_pass_filter_init(0.01, 1e-03);
 
     for(int i = 0; i < 1000; i++ ) {
         double sensor_value = output_sensor_value(); // ノイズが入ったセンサの値
