@@ -5,13 +5,16 @@ void pid_init(
     PID *pid,
     double control_cycle,
     double kp, float kd, float ki,
-    double setpoint
+    double setpoint,
+    double integral_min, double integral_max
 ) {
     pid -> control_cycle = control_cycle;
     pid -> kp = kp;
     pid -> kd = kd;
     pid -> ki = ki;
     pid -> setpoint = setpoint;
+    pid -> integral_max = integral_max;
+    pid -> integral_min = integral_min;
 }
 
 double pid_compute(
@@ -20,6 +23,14 @@ double pid_compute(
 ) {
     double error = pid -> setpoint - input;
     pid -> integral += error * pid -> control_cycle;
+
+    // アンチワインドアップ
+    if (pid -> integral > pid -> integral_max) {
+        pid -> integral = pid -> integral_max;
+    } else if (pid -> integral < pid -> integral_max) {
+        pid -> integral = pid -> integral_max;
+    }
+
     double derivative = (error - pid->last_error) / pid -> control_cycle;
 
     // PID出力の計算
