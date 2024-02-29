@@ -21,7 +21,7 @@ int main() {
 
     // PID制御器の初期化
     PID pid;
-    pid_init(&pid, 0.01, 1.0, 0.0, 0.0, 1.0); 
+    pid_init(&pid, 0.01, 1.0, 0.0, 0.0, 1.0, -5, 5); 
 
     double plant_output = 0.0; // プラントの出力初期化
     double integrator_state = 0.0; // 積分器の状態初期化

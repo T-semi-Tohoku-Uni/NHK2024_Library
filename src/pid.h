@@ -6,6 +6,8 @@ typedef struct PID {
     double kp, kd, ki; // PID parameters
     double setpoint; // 目標値
     double integral; // 積分値
+    double integral_max; // 積分値の最大値
+    double integral_min; // 積分値の最小値
     double last_error; // 前回の偏差
 } PID;
 
@@ -18,6 +20,8 @@ typedef struct PID {
     * @param control_cycle 制御周期
     * @param kp, kd, ki PIDパラメータ
     * @param setpoint 目標値
+    * @param integral_max 積分値の最大値
+    * @param integral_min 積分値の最小値
     * 
     * @return void
 */
@@ -25,7 +29,8 @@ void pid_init(
     PID *pid,
     double control_cycle,
     double kp, float kd, float ki,
-    double setpoint
+    double setpoint,
+    double integral_min, double integral_max
 );
 
 /*
