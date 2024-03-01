@@ -27,8 +27,8 @@ double pid_compute(
     // アンチワインドアップ
     if (pid -> integral > pid -> integral_max) {
         pid -> integral = pid -> integral_max;
-    } else if (pid -> integral < pid -> integral_max) {
-        pid -> integral = pid -> integral_max;
+    } else if (pid -> integral < pid -> integral_min) {
+        pid -> integral = pid -> integral_min;
     }
 
     double derivative = (error - pid->last_error) / pid -> control_cycle;
