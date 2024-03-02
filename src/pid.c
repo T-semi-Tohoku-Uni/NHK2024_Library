@@ -15,6 +15,8 @@ void pid_init(
     pid -> setpoint = setpoint;
     pid -> integral_max = integral_max;
     pid -> integral_min = integral_min;
+    pid -> integral = 0;
+    pid -> last_error = 0;
 }
 
 double pid_compute(
