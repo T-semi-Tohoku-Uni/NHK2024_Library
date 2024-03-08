@@ -11,4 +11,17 @@ struct robotParams {
     double wheelBaseLen;
 };
 
+// mechanum wheel robot inverseKinematics
+// input: robotParams and velocity of robot {vx, vy, omega}
+// output: wheel angle velocity {w1, w2, w3, w4}
+void inverseKinematics(struct robotParams *params, double *velocity, double *wheelAngleVelocity);
+
+// mechanum wheel robot forwardKinematics
+// input: robotParams and wheel angle velocity {w1, w2, w3, w4}
+// output: velocity of robot {vx, vy, omega}
+void forwardKinematics(struct robotParams *params, double *wheelAngleVelocity, double *velocity);
+
+// Initialize robotParams
+void initRobotParams(struct robotParams *params, double wheelDiameter, double treadLen, double wheelBaseLen);
+
 #endif //NHK2024_LIBRARY_MECHANUM_KINEMATICS_H

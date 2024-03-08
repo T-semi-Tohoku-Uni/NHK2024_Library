@@ -54,3 +54,10 @@ void forwardKinematics(struct robotParams *params, double *wheelAngleVelocity, d
         velocity[i] = velocity[i] * wheelDiameter / 4;
     }
 }
+
+// Initialize robotParams
+void initRobotParams(struct robotParams *params, double wheelDiameter, double treadLen, double wheelBaseLen) {
+    params->wheelDiameter = wheelDiameter;
+    params->treadLen = treadLen;
+    params->wheelBaseLen = wheelBaseLen;
+}
