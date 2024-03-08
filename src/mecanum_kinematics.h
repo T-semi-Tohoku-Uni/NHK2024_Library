@@ -5,11 +5,11 @@
 #ifndef NHK2024_LIBRARY_MECHANUM_KINEMATICS_H
 #define NHK2024_LIBRARY_MECHANUM_KINEMATICS_H
 //robot wheel parameters with struct
-struct robotParams {
+typedef struct robotParams{
     double wheelDiameter;
     double treadLen;
     double wheelBaseLen;
-};
+}robotParams;
 
 // mechanum wheel robot inverseKinematics
 // input: robotParams and velocity of robot {vx, vy, omega}

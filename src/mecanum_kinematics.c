@@ -1,5 +1,5 @@
 //
-// Created by YYcri on 2024/03/08.
+// Created by Yoshi on 2024/03/08.
 //
 
 #include "mecanum_kinematics.h"
