@@ -2,10 +2,10 @@
 // Created by YYcri on 2024/03/08.
 //
 
-#include "mechanum_kinematics.h"
+#include "mecanum_kinematics.h"
 //y+: forward, x+: right, omega: counter clockwise
 
-// mechanum wheel robot inverseKinematics
+// mecanum wheel robot inverseKinematics
 // input: robotParams and velocity of robot {vx, vy, omega}
 // output: wheel angle velocity {w1, w2, w3, w4}
 void inverseKinematics(struct robotParams *params, double *velocity, double *wheelAngleVelocity) {
@@ -32,7 +32,7 @@ void inverseKinematics(struct robotParams *params, double *velocity, double *whe
     }
 }
 
-// mechanum wheel robot forwardKinematics
+// mecanum wheel robot forwardKinematics
 // input: robotParams and wheel angle velocity {w1, w2, w3, w4}
 // output: velocity of robot {vx, vy, omega}
 void forwardKinematics(struct robotParams *params, double *wheelAngleVelocity, double *velocity) {
