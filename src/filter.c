@@ -29,11 +29,11 @@ double moving_average_filter_update(
     return sum / buf->buf_size;
 }
 
-NHK2024_Low_Pass_Filter_Settings* low_pass_filter_init(
+Low_Pass_Filter_Settings* low_pass_filter_init(
     double cutoff_freq,
     double control_cycle
 ) {
-    NHK2024_Low_Pass_Filter_Settings* settings = (NHK2024_Low_Pass_Filter_Settings*)malloc(sizeof(NHK2024_Low_Pass_Filter_Settings));
+    Low_Pass_Filter_Settings* settings = (Low_Pass_Filter_Settings*)malloc(sizeof(Low_Pass_Filter_Settings));
     settings->cutoff_freq = cutoff_freq;
     settings->control_cycle = control_cycle;
     settings->last_input_val = 0.0;
@@ -42,7 +42,7 @@ NHK2024_Low_Pass_Filter_Settings* low_pass_filter_init(
 }
 
 double low_pass_filter_update(
-    NHK2024_Low_Pass_Filter_Settings* settings,
+    Low_Pass_Filter_Settings* settings,
     double input_val
 ) {
     double T = settings->control_cycle;
