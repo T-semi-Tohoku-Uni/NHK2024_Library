@@ -23,12 +23,12 @@ typedef struct NHK2024_Filter_Buffer {
     * @param control_cycle 制御周期
     * @param last_val 前回の値
 */
-typedef struct NHK2024_Low_Pass_Filter_Settings {
+typedef struct Low_Pass_Filter_Settings {
     double cutoff_freq;
     double control_cycle;
     double last_input_val;
     double last_output_val;
-} NHK2024_Low_Pass_Filter_Settings;
+} Low_Pass_Filter_Settings;
 
 /*
     * 移動平均フィルタの初期化
@@ -66,7 +66,7 @@ double moving_average_filter_update(
     * 
     * @return フィルタの設定
 */
-NHK2024_Low_Pass_Filter_Settings* low_pass_filter_init(
+Low_Pass_Filter_Settings* low_pass_filter_init(
     double cutoff_freq,
     double control_cycle
 );
@@ -80,7 +80,7 @@ NHK2024_Low_Pass_Filter_Settings* low_pass_filter_init(
     * @return フィルタを通した後の値
 */
 double low_pass_filter_update(
-    NHK2024_Low_Pass_Filter_Settings* settings,
+    Low_Pass_Filter_Settings* settings,
     double input_val
 );
 
