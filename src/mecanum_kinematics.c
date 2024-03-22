@@ -61,3 +61,19 @@ void initRobotParams(struct robotParams *params, double wheelDiameter, double tr
     params->treadLen = treadLen;
     params->wheelBaseLen = wheelBaseLen;
 }
+
+// Convert wheel angle velocity to motor angle velocity
+void wheelAngleVelocityToMotorAngleVelocity(struct robotParams *params, double *wheelAngleVelocity, double *motorAngleVelocity) {
+    double gearRatio = params->gearRatio;
+    for (int i = 0; i < 4; i++) {
+        motorAngleVelocity[i] = wheelAngleVelocity[i] * gearRatio;
+    }
+}
+
+// Convert motor angle velocity to wheel angle velocity
+void motorAngleVelocityToWheelAngleVelocity(struct robotParams *params, double *motorAngleVelocity, double *wheelAngleVelocity) {
+    double gearRatio = params->gearRatio;
+    for (int i = 0; i < 4; i++) {
+        wheelAngleVelocity[i] = motorAngleVelocity[i] / gearRatio;
+    }
+}

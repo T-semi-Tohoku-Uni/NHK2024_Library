@@ -9,6 +9,7 @@ typedef struct robotParams{
     double wheelDiameter;
     double treadLen;
     double wheelBaseLen;
+    double gearRatio;
 }robotParams;
 
 // mechanum wheel robot inverseKinematics
