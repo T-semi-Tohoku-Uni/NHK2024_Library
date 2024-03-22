@@ -56,10 +56,11 @@ void forwardKinematics(struct robotParams *params, double *wheelAngleVelocity, d
 }
 
 // Initialize robotParams
-void initRobotParams(struct robotParams *params, double wheelDiameter, double treadLen, double wheelBaseLen) {
+void initRobotParams(struct robotParams *params, double wheelDiameter, double treadLen, double wheelBaseLen, double gearRatio) {
     params->wheelDiameter = wheelDiameter;
     params->treadLen = treadLen;
     params->wheelBaseLen = wheelBaseLen;
+    params->gearRatio = gearRatio;
 }
 
 // Convert wheel angle velocity to motor angle velocity
