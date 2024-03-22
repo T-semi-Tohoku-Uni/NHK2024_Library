@@ -1,6 +1,8 @@
 #ifndef __PID_H__
 #define __PID_H__
 
+#include <stdint.h>
+
 typedef struct PID {
     double control_cycle; // 制御周期
     double kp, kd, ki; // PID parameters
@@ -42,6 +44,32 @@ void pid_init(
     * @return double 出力値
 */
 double pid_compute(
+    PID *pid,
+    double input
+);
+
+/*
+    * int32_t PID制御器の計算, 戻り値をdouble -> int32_tにキャストするラッパー関数
+    * 
+    * @param pid PID制御器
+    * @param input 入力値
+    * 
+    * @return int32_t 出力値
+*/
+int int32_t_pid_compute(
+    PID *pid,
+    double input
+);
+
+/*
+    * uint16_t PID制御器の計算, 戻り値をdouble -> uint16_tにキャストするラッパー関数
+    *
+    * @param pid PID制御器
+    * @param input 入力値
+    * 
+    * @return uint16_t 出力値
+*/
+uint16_t uint16_t_pid_compute(
     PID *pid,
     double input
 );

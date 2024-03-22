@@ -43,3 +43,17 @@ double pid_compute(
 
     return output;
 }
+
+int int32_t_pid_compute(
+    PID *pid,
+    double input
+) {
+    return (int)pid_compute(pid, input);
+}
+
+uint16_t uint16_t_pid_compute(
+    PID *pid,
+    double input
+) {
+    return (uint16_t)int32_t_pid_compute(pid, input);
+}
