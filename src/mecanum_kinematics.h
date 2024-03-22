@@ -25,4 +25,7 @@ void forwardKinematics(struct robotParams *params, double *wheelAngleVelocity, d
 // Initialize robotParams
 void initRobotParams(struct robotParams *params, double wheelDiameter, double treadLen, double wheelBaseLen);
 
+void motorAngleVelocityToWheelAngleVelocity(struct robotParams *params, double *motorAngleVelocity, double *wheelAngleVelocity);
+void wheelAngleVelocityToMotorAngleVelocity(struct robotParams *params, double *wheelAngleVelocity, double *motorAngleVelocity);
+
 #endif //NHK2024_LIBRARY_MECHANUM_KINEMATICS_H
