@@ -44,6 +44,15 @@ double pid_compute(
     return output;
 }
 
+void pid_reset_setpoint(
+    PID *pid,
+    double setpoint
+) {
+    pid -> setpoint = setpoint;
+    pid -> integral = 0; // TODO: check if this is necessary
+    pid -> last_error = 0; // TODO: check if this is necessary
+}
+
 int int32_t_pid_compute(
     PID *pid,
     double input
