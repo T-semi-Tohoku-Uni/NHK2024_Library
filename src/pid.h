@@ -49,6 +49,19 @@ double pid_compute(
 );
 
 /*
+    * PIDの目標値の再設定
+    * 
+    * @param pid PID制御器
+    * @param setpoint 目標値
+    * 
+    * @return void
+*/
+void pid_reset_setpoint(
+    PID *pid,
+    double setpoint
+);
+
+/*
     * int32_t PID制御器の計算, 戻り値をdouble -> int32_tにキャストするラッパー関数
     * 
     * @param pid PID制御器
